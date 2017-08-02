@@ -1,0 +1,41 @@
+
+{{> dashboard_pembeli}}
+<div class="col-lg-9" style="background-color: white">
+  <div class="col-lg-12">
+    <div class="page-header">
+      <h3><strong>ORDER TRACKING</strong></h3>
+      <small><strong>Welcome you, below's your order number : {{_order_id}}</strong></small>
+      <br>
+ {{#if orders}}
+    <table class="w3-card-4" >
+    <tr class="w3-light-grey"  style="border:1px solid">
+      <th style="border:1px solid">Product Name</th>
+      <th style="border:1px solid">Quantity</th>
+    </tr>
+    {{#each orders}}
+    <tr style="border:1px solid">
+      <td style="border:1px solid"><a href="">{{this.product_name}}</a></td>
+      <td style="border:1px solid">{{this.qty}}</td>
+    </tr >
+    {{/each}}
+  </table>
+ {{#if status}}
+  
+  <table>
+  
+    <tr class="w3-light-grey"  style="border:1px solid">
+      <th style="border:1px solid">Current Status</th>
+    </tr>
+  {{#each status}}
+     <tr style="border:1px solid">
+       <td style="border:1px solid">{{this.status}}</td>
+    </tr >
+   {{/each}}
+  </table>
+ 
+  {{/if}}
+{{/if}}
+    </div>
+    
+    </div>
+

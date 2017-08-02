@@ -1,0 +1,22 @@
+<div class="col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4" style="padding-top: 50px">
+	<form class="form-signin" action="/protected/admin/insert" method="post" role="form" data-toggle="validator">
+		<h2 class="form-signin-heading text-center">Dirbisgrunt Setup</h2>
+        <div class="form-group">
+	    	<label for="users_name">User name *</label>
+	    	<input type="text" class="form-control" id="username" name="users_name" placeholder="Users name" required>
+	  	</div>
+		<div class="form-group">
+	    	<label for="users_name">Name *</label>
+	    	<input type="text" class="form-control" id="fullname" name="name" placeholder="Users name" required>
+	  	</div>
+	  	<div class="form-group">
+		    <label for="user_password">User password *</label>
+		    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+	  	</div>
+	  	<div class="form-group">
+		    <label for="cpassword">Password confirm *</label>
+		    <input type="password" data-match="#password" placeholder="Confirm password" class="form-control" id="frm_user_password_confirm" name="cpassword" required>
+	  	</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Complete setup</button>
+	</form>
+</div>

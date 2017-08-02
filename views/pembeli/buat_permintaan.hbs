@@ -1,0 +1,116 @@
+{{> dashboard_pembeli}}
+<div class="col-lg-9">
+
+<div class="container">
+    <form action="/pembeli/buat/permintaan" method="POST" class="container">
+    <div class="panel panel-default" style="width: 70%">
+        <div class="panel-body">
+           <h3>Buat Permintaan Beli</h3>
+        <br>
+        <br>
+           <p>Beritahu Supplier kami apa yang anda butuhkan</p>
+           <p>Lengkapi Permintaan beli untuk mendapatkan harga terbaik</p>
+           <hr style="font-weight: 100px">
+           <br>
+           <div class="row">
+               <div class="col-md-3">
+                       <label for="" class="control-label"><strong>Nama Produk</strong></label>
+               </div>
+               <div class="col-md-8">
+                   <input type="text" name="name" id="" class="form-control" value="">
+               </div>
+           </div>
+           <br>
+           <div class="row">
+                <div class="col-md-3">
+                       <label for="" class="control-label"><strong>Kuantitas</strong></label>
+               </div>
+               <div class="col-md-3">
+                   <input type="text" name="kuantitas" id="" class="form-control"  placeholder="Kuantitas">
+               </div>
+               <div class="col-md-2">
+                  <select name="satuan" id="" class="form-control">
+                      <option value="unit">UNIT</option>
+                  </select>
+                  
+               </div>
+               <div class="col-md-3">
+                   <input type="text" name="lainnya" id="" class="form-control" placeholder="Lainnya">
+               </div>
+           </div>
+           <br>
+           <div class="row">
+               <div class="col-md-3">
+                       <label for="" class="control-label"><strong>Harga</strong></label>
+               </div>
+               <div class="col-md-6">
+                   <div class="input-group">
+                       <div class="input-group-addon">Rp.</div>
+                       <input type="text" name="harga"  class="form-control" id="harga" placeholder="Harga">
+                   </div>
+               </div>
+           </div>
+           <br>
+           <div class="row">
+               <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Deskripsi Produk</strong></label>
+               </div>
+               <div class="col-md-8">
+                   <textarea name="desc" id="" class="form-control" rows="3" ></textarea>
+               </div>
+           </div>
+           <br>
+           <div class="row">
+               <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Tambah Lampiran</strong></label>
+               </div>
+               <div class="col-md-9">
+                   <button type="button" class="btn btn-default">Lampiran</button>
+               </div>
+           </div>
+             <hr style="font-weight: 100px">
+             <div class="row">
+                 <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Tujuan Pengiriman</strong></label>
+                </div>
+             </div>
+             <br>
+             <div class="row">
+               <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Provinsi</strong></label>
+               </div>
+               <div class="col-md-8">
+                 <input type="text" name="province" id="" class="form-control">
+               </div>
+           </div>
+           <br>
+            <div class="row">
+               <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Kota</strong></label>
+               </div>
+               <div class="col-md-8">
+                 <input type="text" name="city" id="" class="form-control" >
+               </div>
+           </div>
+           <br>
+            <div class="row">
+               <div class="col-md-3">
+                   <label for="" class="control-label"><strong>Alamat</strong></label>
+               </div>
+               <div class="col-md-8">
+                 <input type="text" name="address" id="" class="form-control" >
+               </div>
+           </div>
+           <br>
+           <div class="row">
+               <div class="col-md-3"></div>
+               <div class="col-md-8">
+                    <button type="submit"  style="width: 100%" class="btn btn-primary">BUAT PERMINTAAN</button>
+                </div>
+           </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+</div>

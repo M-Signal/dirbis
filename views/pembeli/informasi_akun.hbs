@@ -1,0 +1,56 @@
+{{> dashboard_pembeli}}
+<div class="col-lg-9">
+	<div class="row">
+		<div class="col-md-8">
+			<h3>EDIT INFORMASI AKUN</h3>
+			<form method="post" id="edit_form" action="/pembeli/akun/edit" data-toggle="validator">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Username *</label>
+						<input type="text" class="form-control" name="username" value="{{user.username}}" style="width: 100%" required>
+					</div>
+					<div class="col-md-6">
+						<label>User email *</label>
+					<input type="email" class="form-control" name="email" value="{{user.email}}">
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<label>Name *</label>
+						<input type="text" class="form-control" name="fullname" value="{{user.fullname}}" style="width: 100%">
+					</div>
+					<div class="col-md-6">
+						<label>Address *</label>
+					<input type="text" class="form-control" name="address" value="{{user.address}}">
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						<label>Birth *</label>
+						<input type="date" name="birth" id="" class="form-control" value="{{user.birth}}" style="width: 100%" required="required" title="">
+					</div>
+					<div class="col-md-2">
+						<label>Gender *</label>
+						<br>
+						 <input type="radio" name="gender" value="male">Male <br>
+						<input type="radio" name="gender" value="female" >Female
+					</div>
+					<div class="col-md-6">
+						<label>Phone *</label>
+					<input type="text" class="form-control" name="phone" value="{{user.phone}}">
+					</div>
+				</div>
+				
+				<br>
+				
+				<div class="form-group">
+					<div class="pull-right">
+						<button type="submit" class="btn btn-primary">EDIT</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

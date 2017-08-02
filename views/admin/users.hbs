@@ -1,0 +1,29 @@
+{{> dashboard_admin}}
+<div class="col-lg-9">
+    <div class="col-lg-12">
+        <h2>Users</h2>
+    </div>
+    <div class="col-lg-12">
+        <ul class="list-group">
+            <li class="list-group-item">
+                     <strong>Recent Users <span class="text-success">Filtered term: {{results.length}} </strong>
+            </li>
+            {{#each results}}
+                <li class="list-group-item">
+                    <h4 class="pull-right" style="padding-left: 10px;">
+                        {{#if this.confirmation}}
+                            <a class="text-danger" href="/protected/auth/{{this.username}}"> <i class="fa fa-toggle-on"></i></a>
+                        {{else}}
+                            <a class="text-danger" href="/protected/auth/{{this.username}}"> <i class="fa fa-toggle-off"></i></a>
+                        {{/if}}
+                    </h4>
+                    <h5>
+                        <a href="/penjual/user/view/{{this.id}}">View User</a> - <span class="text-info">Date: </span>
+                        {{format_date this.order_date "DD/MM/YYYY HH:MM"}} | <span class="text-info">Email:</span> {{this.email}} | 
+                        <span class="text-info">Username:</span> {{this.username}}
+                    </h5>
+                </li>
+            {{/each}}
+        </ul>
+    </div> 
+</div>

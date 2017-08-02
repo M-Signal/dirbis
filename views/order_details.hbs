@@ -1,0 +1,43 @@
+{{> menu}}
+<div class="col-lg-9">
+    <div class="col-lg-12">
+        <h2>Order Details</h2>
+        <h4>Order ID : {{session.order_id}}</h4>
+    </div>
+    <div class="order-layout col-md-12">
+        {{#if result }}
+            <ul class="list-group">
+            {{#each result}}
+                  <form action="/penjual/order/details/status/update" method="POST">
+                  <li class="list-group-item">
+                       <div class="row">
+                      <div class="col-md-8">
+                      <span class="text-info"> ID :</span> <input type="text" name="detail_id" value="{{this.id}}" style="width: 100px; border: none" readonly> | Product :</span> {{this.product_name}} 
+                      | <span class="text-info">Date : </span>{{format_date this.order_date "DD/MM/YY"}}
+                      |<span class="text-info"> Qty :</span> {{this.qty}}
+                      |<span class="text-info"> Price :</span> {{this.price}}
+                      |<span class="text-info"> 
+                    Total :</span> {{this.price}}
+                      </div>
+                      <div class="col-md-2"> 
+                        <select name="order_status" class="form-control input-sm" id="order_status">
+                            <option value="Completed">Completed</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Cancelled">Cancelled</option>
+                            <option value="Declined">Declined</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Pending">Pending - Reason: echeck</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2"> 
+                       <button class="btn btn-success" type="submit">Update status</button>
+                    </div>
+                     </div>
+                    </li>
+                </form>
+                   
+            {{/each}}
+             </ul>
+        {{/if}}
+    </div>
+</div>  

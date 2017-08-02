@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{config.cart_title}} - {{title}}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Powered by Dirbis">
+	<meta name="keywords" content="ExpressCart">
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/flatly.bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/bootstrap-markdown.min.css">
+	<link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+	<script src="/javascripts/jquery-2.1.4.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/bootstrap-validator.js"></script>
+	<script src="/javascripts/bootstrap-markdown.js"></script>
+	<script src="/javascripts/ExpressCart.js"></script>
+	<script src="/javascripts/jquery.dotdotdot.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{{!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"> --}}
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="/lib/w3-theme-purple.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+</head>
+<body class="{{show_footer}}" style="background-color:#e6ecf0">
+	<!-- Static navbar -->
+	<div class="jumbotron" style="margin-bottom: 0; padding-top: 1px; padding-bottom: 1px; background-color: #fff; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+		<div style="height: 100px;" class="container">
+			<div style="width: 11%; height: 90px; float: left; background-image: url('/dirbis.png'); background-repeat: round; border-radius: 20px"></div>
+			<div style=" width: 80%; height: 100px; float: left; margin-left: 10px">
+				<div class="row">
+					<div class="col-md-4" >Download | Bantuan | Follow Us <i class="fa fa-google-plus" aria-hidden="true"></i>&nbsp;<i class="fa fa-facebook" aria-hidden="true"></i> </div>
+					<div class="col-md-4;" style="float: right; margin-right: 30px">
+						<i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="row">
+					<form action="/search" id="search_form" method="post">
+					<div class="col-md-2" ></div>
+					<div class="col-md-8">
+							<div class="col-sm-8"  style="padding: 0; margin: 0;">
+								<input type="search" name="frm_search" id="frm_search" placeholder="Search the shop" class="form-control" value="" required="required" title="" style="width: 99.7%">
+							</div>
+							<div class="col-sm-2"  style="padding: 0; margin: 0">
+								<select name="searchCategory" id="" class="form-control">
+									<option value="UKM">UKM</option>
+									<option value="PRODUK">PRODUK</option>
+								</select>
+							</div>
+							<div class="col-sm-1"  style="padding: 0; margin-left: 2px">
+								<button class="btn btn-success">search</button>
+							</div>
+					</div>
+					</form>
+					<div class="col-md-2;" style="float: right; margin-right: 20px">
+						 {{#if session.user_type}}
+							{{#ifCond session.user_type '==' 'penjual'}}
+								<a href="/penjual/orders">
+									<img src="{{session.photo}}" id="{{session.users_name}}" 
+									style="width: 60px; border-radius: 40px">
+								</a>
+							{{/ifCond}}
+						{{#ifCond session.user_type '==' 'pembeli'}}
+						<a href="/profile/{{session.users_name}}">
+							<img src="{{session.photo}}" id="{{session.users_name}}" 
+							style="width: 60px; border-radius: 40px">
+						</a>{{/ifCond}}
+						{{/if}}
+
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default navbar-static-top" style="border-top: 10px; margin-bottom: 10px;  background-color: #fff; border-bottom: 1px solid rgba(0,0,0,0.25)">
+		<div class="container-fluid container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+				<div class="navbar-brand" style="text-align: center">
+					<a href="/" ><span style="background-repeat: round; color: transparent; border-radius: 5px" id="navLogo">asassa;</span>&nbsp;DIRBIS</a>
+				</div>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right" >
+					<li id="searchBoxNav" style="padding: 20px">
+						 <div class="dropdown" >
+							<button style="padding-top:0; padding-bottom: 0; background-color: white" class="btn dropdown-toggle" type="button" data-toggle="dropdown" >
+								 {{#if session.user_type}}
+									{{#ifCond session.user_type '==' 'penjual'}}
+											Penjual
+											<span class="caret"></span></button>
+											<ul class="dropdown-menu" >
+											<li ><a href="/penjual/product/new">Tambah Produk</a></li>
+											<li><a href="/penjual/products">Daftar Produk</a></li>
+											<li><a href="/penjual/orders">Orders</a></li>
+											<li><a href="/penjual/katalog/new">Tambah Katalog</a></li>
+											<li><a href="/penjual/katalog/list">Daftar Katalog</a></li>
+											</ul>
+									{{/ifCond}}
+									{{#ifCond session.user_type '==' 'pembeli'}}
+											Pembeli
+											<span class="caret"></span></button>
+											<ul class="dropdown-menu">
+											<li><a href="/pembeli/buat/permintaan">Buat Permintaan</a></li>
+											<li><a href="/pembeli/akun/informasi">Edit Profile</a></li>
+											<li><a href="/pembeli/orders/informasi">Pemesanan</a></li>
+											<li><a href="#">Daftar Pengajuan</a></li>
+											<li><a href="#">Kabar Berita Langganan</a></li>
+									{{/ifCond}}
+								{{/if}} 
+							
+						</div>
+					</li>
+					<li><a href="/pages/products">Produk</a></li>
+					<li><a href="/pages/company">Perusahaan</a></li>
+					 {{#if session.user_type}}
+						{{#ifCond session.user_type '==' 'penjual'}}
+							<li><a href="/penjual/permintaan">Permintaan</a></li>
+							<li><a href="/penjual/timeline">Timeline</a></li>
+						{{/ifCond}}
+						{{#ifCond session.user_type '==' 'pembeli'}}
+							<li><a href="">Penawaran</a></li>
+							<li><a href="/timeline">Timeline</a></li>
+						{{/ifCond}}
+					{{/if}}
+					 
+					{{#if session.cart}}
+						<li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge" id="cart-count">{{object_length session.cart}}</span></a></li>
+					{{else}}
+						<li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge" id="cart-count">0</span></a></li>
+					{{/if}}
+
+					{{#if session.user}}
+						<li><a href="/logout">Logout</a></li>
+					{{else}}
+						{{#if session.passport}}
+							<li><a href="/logout">Logout</a></li>
+						{{else}}
+							<li><a id="login" href="/login">Login</a></li>
+							<li><a href="/register">Daftar</a></li>
+						{{/if}}	
+					{{/if}}
+					  
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="content" class="container-fluid" style="">
+		{{{body}}}
+	</div>
+	<input type="hidden" id="input_notify_message" value="{{message}}">
+	<input type="hidden" id="input_notify_message_type" value="{{message_type}}">
+	<div id="notify_message"></div>
+	{{#if show_footer}}
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Powered by Dirbis</p>
+		</div>
+	</footer>
+	{{/if}}
+
+ <script type="text/javascript" src="//cdn.ably.io/lib/ably.min-1.js"></script>
+ {{!-- <script src="//jsbin-files.ably.io/js/jquery-1.8.3.min.js"></script>  --}}
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+<script>
+  var socket = io.connect('http://localhost:5000');
+</script>	
+
+</body>
+
+</html>

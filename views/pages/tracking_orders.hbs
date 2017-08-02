@@ -1,0 +1,22 @@
+
+{{> dashboard_pembeli}}
+<div class="container" style="background-color: white">
+    <div class="page-header">
+      <h3><strong>ORDER TRACKING</strong></h3>
+      <small><strong>Welcome you, below's your order number</strong></small>
+      <br>
+ {{#if orders}}
+     <table class="w3-card-4" >
+    <tr class="w3-light-grey"  style="border:1px solid">
+      <th style="border:1px solid">Order ID</th>
+      <th style="border:1px solid">Created date</th>
+    </tr>
+    {{#each orders}}
+    <tr style="border:1px solid">
+      <td style="border:1px solid"><a href="/orders/tracking/{{this.id}}">{{this.id}}</a></td>
+      <td style="border:1px solid">{{this.created_at}}</td>
+    </tr >
+    {{/each}}
+  </table>
+{{/if}}
+</div>

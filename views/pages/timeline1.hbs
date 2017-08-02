@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<div class="container "> 
+    <div class="col-lg-3" style="padding: 0">
+    <div class="media">
+       <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="/dirbis.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+    </div>
+        
+    <ul class="list-group">
+        <li class="list-group-item"><a href="/protected/users"><strong> <i class="fa fa-newspaper-o"></i> Kabar Berita</strong></a></li>
+        <li class="list-group-item"><a href="//products"><strong><i class="fa fa-envelope-o"></i> Inbox</strong></a></li>
+        <li class="list-group-item"><a href="/admin/orders"><strong> <i class="fa fa-user" aria-hidden="true"></i> Followers</strong> </a></li>
+    </ul>
+</div>
+
+
+
+       <form action="/penjual/timeline" method="POST" enctype="multipart/form-data">
+    <div class="col-lg-6" style="padding: 0; margin: 0">
+        <div id="inputPost" class="col-lg-12" style="margin-bottom: 0; padding-bottom: 0">
+            <div class="page-header" style="padding-top: 0; margin-top: 0; margin-bottom: 0; padding-bottom: 0 ">
+                <div class="media" style="background-color: white; padding: 10px; width: 100%;  border-radius: 10px">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="/dirbis.png" style="width: 30px; height: 30px; background-repeat: round; border-radius: 50px; margin-top:10px" alt="Image">
+                    </a>
+                    <div class="media-body">
+                        <div class="row">
+                            <div class="col-sm-11" style="padding-right: 0">
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" name="title" id="title" 
+                                    style="border-radius: 20px; width: 100%; " class="form-control" placeholder="Title">
+                                </div>
+                                </div>
+                                <br>
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" 
+                                        name="post_content" cols="30" rows="7" id="post_content" 
+                                        style="overflow: auto; resize: none" placeholder="Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-8" >
+                                <input style="width: 100%" 
+                                class="btn btn-success" type="file" name="upload_file">
+                                <br>
+                            <input type="submit" class="btn btn-success">
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                   
+                       <br>
+                       
+                      
+                </div>
+                <br>
+               
+            </div>
+        </div>
+         <div id="content-timeline">
+                            
+        </div>
+    </div>
+     <script src="/javascripts/timeline.js"></script> 
+    {{> navbar_timeline_right }}
+  </form>

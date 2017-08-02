@@ -1,0 +1,185 @@
+<!-- Modal -->
+<div class="container">
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">REGISTER</h4>
+</div>
+<div class="modal-body">
+    <div role="tabpanel">
+    <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#pembeli" aria-controls="uploadTab" role="tab" data-toggle="tab">Pembeli</a></li>
+            <li role="presentation"><a href="#penjual" aria-controls="browseTab" role="tab" data-toggle="tab">Penjual</a></li>
+        </ul>
+    <!-- Tab panes -->
+        <div class="tab-content">
+        <br>
+        <div role="tabpanel" class="tab-pane active" id="pembeli">
+            <form action="/pembeli/register" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" style="width:100%" type="" name="username" value="" placeholder="Username">
+                    </div>
+                    <div class="col-md-6"> 
+                    <input class="form-control" style="width:100%" type="" name="email" value="" placeholder="Email">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" 
+                        style="width:100%" type="" 
+                        name="fullname" value="" placeholder="name">
+                    </div>
+                    <div class="col-md-1">
+                    <input class="form-control" 
+                    style="width:100%" type="" name="" value="" placeholder="+62" readonly>
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control" 
+                        style="width:100%" type="" 
+                        name="telepon" value="" placeholder="8123xxxxx">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" 
+                        style="width:100%" type="password" name="password" value="" placeholder="Password">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control" 
+                        style="width:100%" type="password" name="cpassword" value="" placeholder="Confirm Password">
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" style="width:100%; margin-bottom:20px">SUBMIT</button>
+                    </div>
+                </div>
+                
+                <div class="row" style="text-align: center"><p>Or</p></div>
+                <div class="row" style="text-align: center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5" style="text-align: center">
+                        <a href="/register_penjual/facebook"><button class="btn btn-primary" style="background-image: url('/facebook_register.jpg'); width: 100%; background-repeat: round; height: 50px"></button></a>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="/register_penjual/facebook"><button class="btn btn-primary" style="background-image: url('/google.png'); width: 100%; background-repeat: round; height: 50px"></button></a>
+                    </div>
+                </div>
+            </form>
+        </div><!--end tab pembeli-->
+        
+        <div role="tabpanel" class="tab-pane" id="penjual">
+            <form action="/penjual/register" method="POST" enctype="multipart/form-data">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <input class="form-control" style="width:100%" 
+                    type="text" name="username" value="" 
+                    placeholder="username">
+                </div>
+                <div class="col-md-6">
+                    <input type="email" 
+                    class="form-control" name="email" 
+                    placeholder="email">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <input class="form-control" 
+                    style="width:100%" 
+                    type="text" name="fullname" 
+                    value="" placeholder="name">
+                </div>
+                 <div class="col-md-6">
+                     <input type="text" class="form-control" 
+                     placeholder="phone" name="phone">
+                 </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-md-6">
+                    <label><input type="radio" name="optradio">PRIA</label>
+                    <label style="padding-left:60px; padding-right:93px"><input type="radio" name="optradio">WANITA</label>
+                               
+                </div>
+                <div class="col-md-6">
+                    <select name="province" id="province" class="form-control">
+                        <option value="sumatera utara">Sumatera Utara</option>
+                    </select>
+                </div>
+            </div> 
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                     <input class="form-control" 
+                     style="width:100%" type="" 
+                     name="companyname" value="" placeholder="company name">
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" 
+                    style="width:100%" type="text" 
+                    name="address" placeholder="address">
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-md-6">
+                    <select name="postalcode" id="postalcode" class="form-control">
+                        <option value="20252">20252</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" 
+                    style="width:100%" type="text" 
+                    name="district" placeholder="district">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="city" placeholder="city" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" 
+                    style="width:100%" type="text" 
+                    name="sub_district" placeholder="sub district">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea style="height: 200px" 
+                    name="desc" id="desc" 
+                    class="form-control" rows="3" 
+                    placeholder="Company Description"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <input style="width: 100%" 
+                    class="btn btn-primary" type="file" name="upload_file">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="password" name="password" placeholder="password" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <input type="password" name="cpassword" placeholder="Confirm password" class="form-control">
+                </div>
+            </div>
+            <br>
+              <button class="btn btn-primary" style="width:99%; margin-bottom:20px">SUBMIT</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
